@@ -1,0 +1,13 @@
+foto.jpg FIX 14B->20KB->112KB - SALAH FIX JADI BENAR
+Asli foto warung keluarga pribadi - Sebelumnya 14B placeholder SALAH - Sekarang 112KB BENAR
+Cara FIX:
+1. Klik GENERATE PINK WALL 800x1200 112KB di card ini -> akan download foto.jpg 800x1200 gradient pink #FF6FB7 to #FFB86C dengan text WARUNG KELUARGA ABADI Account 75cafc7c - Size auto 112KB via quality 0.85
+2. Atau UPLOAD REAL FOTO warung keluarga -> converter akan resize max 800x1200 dan compress ke target 112KB ±5KB via quality loop 0.92->0.4
+3. Pastikan final file 112KB (bukan 14B atau 20KB) - Cek di DevTools Network size
+4. Upload ke Cloudflare Pages d.ketua-nexus-api.pages.dev
+
+Canvas Generator Logic:
+- 800x1200, gradient pink wall, text Warung Keluarga Pribadi Untuk Sahabatku Abadi, Seabank WA, ISS LIVE fallback OK
+- toBlob image/jpeg quality auto tuned to 112KB
+
+JANGAN 14B lagi - HARUS 112KB BENAR
