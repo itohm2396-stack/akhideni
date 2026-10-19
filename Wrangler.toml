@@ -8,10 +8,3 @@ route = "d.ketua-nexus-api.pages.dev/*"
 command = ""
 [site]
 bucket = "./"
-
-[build.upload]
-format = "service-worker"
-
-# FINAL PERFECT - KAMERA PENYIMPANAN 100% AKTIF
-# Account 75cafc7c Patent Abadi
-# SEABANK 901985950786 - WA 085779007835
