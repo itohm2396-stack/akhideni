@@ -1,12 +1,12 @@
 /*
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
-  Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With
+  X-Ketua-Nexus-Patent: 75cafc7c Abadi
+  X-Patent-Abadi: 1000000000PCT
+  Cache-Control: public, max-age=31536000, immutable
+  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  X-Patent-NEXUS: KETUA-NEXUS-API-2025-FINAL
-  X-Account: 75cafc7c44fd6e8c99600441041d09e0
-  Cache-Control: public, max-age=3600
-/foto.jpg
-  Content-Type: image/jpeg
-  Cache-Control: public, max-age=86400, immutable
-  Access-Control-Allow-Origin: *
+  Referrer-Policy: no-referrer-when-downgrade
+  Permissions-Policy: camera=(self), microphone=(self), geolocation=(self)
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' https:;
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
