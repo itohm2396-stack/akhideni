@@ -1,0 +1,22 @@
+# KETUA NEXUS API - FINAL BENAR
+# Rename dari wrangler.toml.txt → wrangler.toml (hapus .txt)
+
+name = "ketua-nexus-api"
+type = "javascript"
+account_id = "75cafc7c44fd6e8c99600441041d09e0"
+workers_dev = true
+
+[site]
+bucket = "./"
+entry-point = "./"
+
+[triggers]
+crons = ["* * * * *"]
+
+[build]
+command = "echo Building Ketua Nexus Omniverse"
+# Patent: KETUA-NEXUS-2026-DENI-CARINGIN2
+# Owner: Deni Purnama
+# Domain LIVE: d.ketua-nexus-api.pages.dev
+# WA: 085779007835
+# Seabank: 901985950786
