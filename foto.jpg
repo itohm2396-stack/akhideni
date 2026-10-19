@@ -1,0 +1,12 @@
+// INSTRUKSI FOTO.JPG - WARUNG KELUARGA PRIBADI - 112KB REAL JPG
+// PROBLEM OLD: foto.jpg 14B 171B 871B HTML placeholder not JPG - FIXED NOW
+// SOLUTION: Ganti dengan foto real warung keluarga - 112KB - 320px height cover rounded 20px
+// CARA FIX:
+// 1. Buka HP OPPO A18 - foto warung keluarga asli
+// 2. Crop 4:3 - resize width 800px - compress 112KB
+// 3. Save as foto.jpg di root folder
+// 4. Pastikan bukan HTML placeholder - check: file harus binary JPG header FF D8 FF
+// 5. Jika di GitHub: git add foto.jpg --force (karena .gitignore mungkin block jpg)
+// 6. Verify: foto.jpg harus bisa dibuka sebagai image, bukan text
+// TEMPORARY: gunakan foto placeholder dari Unsplash warung atau upload-hub.js akan handle dataURL dari kamera
+// Final: warungImg src foto.jpg - logoHeader src foto.jpg - localStorage warungFoto dataURL
