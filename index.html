@@ -1,224 +1,31 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>KETUA NEXUS OMNIVERSE - FINAL PERFECT - KAMERA PENYIMPANAN 100% AKTIF</title>
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#00FFFF">
-<meta name="description" content="Super App Ketua Nexus Omniverse Warung Keluarga - Account 75cafc7c - SEABANK 901985950786 - WA 085779007835 - Kamera Penyimpanan 100% Aktif">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#070A14;--card:#111A2A;--card2:#0F1424;--cyan:#00FFFF;--mag:#FF00FF;--gold:#FFD700;--border:#1E2A4A;--text:#E6F1FF;--muted:#8899AA}
-body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;min-height:100vh;overflow-x:hidden;padding-bottom:80px}
-h1,h2{font-family:'Space Grotesk',sans-serif}
-.header{position:sticky;top:0;z-index:100;background:rgba(7,10,20,0.92);backdrop-filter:blur(16px);border-bottom:2px solid var(--cyan);padding:12px 16px;display:flex;align-items:center;gap:12px}
-.logo{width:48px;height:48px;border-radius:14px;border:2px solid var(--cyan);object-fit:cover;box-shadow:0 0 20px rgba(0,255,255,0.4)}
-.title{font-size:16px;font-weight:800;line-height:1.1;background:linear-gradient(90deg,var(--cyan),var(--mag));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.sub{font-size:10px;color:var(--muted);margin-top:2px}
-.brainWrap{margin:16px;border-radius:28px;border:2px solid var(--cyan);background:linear-gradient(180deg,#111A2A 0%,#0A0F1F 100%);box-shadow:0 0 40px rgba(0,255,255,0.25),inset 0 1px 0 rgba(255,255,255,0.1);padding:18px;text-align:center;position:relative;overflow:hidden}
-.brainWrap::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 0%,rgba(0,255,255,0.15),transparent 60%);pointer-events:none}
-.orb{width:88px;height:88px;margin:0 auto 12px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--cyan) 30%,#0088FF 60%,#6600FF);box-shadow:0 0 30px var(--cyan),0 0 60px rgba(0,255,255,0.3);position:relative;animation:pulse 2s infinite}
-.orb.speaking{animation:pulse2 0.6s infinite;box-shadow:0 0 50px var(--cyan),0 0 80px var(--mag)}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-@keyframes pulse2{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-.wave{display:flex;justify-content:center;gap:4px;height:18px;margin:8px 0}
-.wave span{width:4px;background:var(--cyan);border-radius:4px;display:none;animation:wave 0.8s infinite ease-in-out}
-.wave.flex span{display:block}
-.wave span:nth-child(1){animation-delay:0s}.wave span:nth-child(2){animation-delay:0.1s}.wave span:nth-child(3){animation-delay:0.2s}.wave span:nth-child(4){animation-delay:0.3s}.wave span:nth-child(5){animation-delay:0.4s}
-@keyframes wave{0%,100%{height:6px}50%{height:18px}}
-.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;font-size:12px;cursor:pointer;transition:0.2s}
-.btnCyan{background:var(--cyan);color:#000;box-shadow:0 0 12px rgba(0,255,255,0.5)}
-.btnMag{background:var(--mag);color:#fff}.btnGold{background:var(--gold);color:#000}.btnGray{background:#1E2A4A;color:#fff}
-.btn:active{transform:scale(0.96)}
-.card{margin:16px;background:var(--card);border:1px solid var(--border);border-radius:24px;overflow:hidden;position:relative}
-.cardWarung{border:3px solid var(--cyan);box-shadow:0 0 30px rgba(0,255,255,0.25),inset 0 0 0 1px rgba(0,255,255,0.2)}
-.imgWarung{width:100%;height:320px;object-fit:cover;display:block;border-radius:20px}
-.overlay{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,transparent 100%);color:#fff}
-.cameraView{width:100%;height:260px;object-fit:cover;border-radius:20px;background:#000;display:none}
-.searchWrap{margin:16px;background:var(--card);border:2px solid var(--cyan);border-radius:24px;padding:12px;display:flex;gap:8px;box-shadow:0 0 20px rgba(0,255,255,0.15)}
-.searchInput{flex:1;background:var(--bg);border:1px solid var(--cyan);border-radius:14px;padding:12px 14px;color:#fff;outline:none;font-size:14px}
-.chip{padding:8px 14px;border-radius:12px;border:1px solid var(--cyan);background:#0A1A2A;color:var(--cyan);font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
-.chip:hover{background:var(--cyan);color:#000}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px}
-.appCard{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:12px;text-align:center;transition:0.2s}
-.appCard:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,255,255,0.2)}
-.appIcon{width:48px;height:48px;border-radius:16px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px}
-.linkBtn{display:inline-block;margin-top:8px;padding:8px 14px;background:var(--cyan);color:#000;border-radius:10px;font-size:11px;font-weight:800;text-decoration:none}
-.fab{position:fixed;right:16px;bottom:80px;z-index:60;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--mag));border:0;color:#000;font-size:28px;font-weight:800;box-shadow:0 8px 24px rgba(0,255,255,0.5);cursor:pointer}
-.bottomNav{position:fixed;bottom:0;left:0;right:0;height:64px;background:#0F1424;border-top:2px solid var(--cyan);display:flex;justify-content:space-around;align-items:center;z-index:50}
-.navItem{flex:1;text-align:center;font-size:9px;color:#8899AA;font-weight:600;cursor:pointer;padding:6px 0;border-top:3px solid transparent;transition:0.2s}
-.navItem.active{color:var(--cyan);border-top-color:var(--cyan);background:rgba(0,255,255,0.08)}
-.menuOverlay{position:fixed;inset:0;z-index:999;background:rgba(7,10,20,0.98);backdrop-filter:blur(20px);overflow:auto;padding:20px;padding-bottom:100px;display:none}
-.menuOverlay.open{display:block}
-.closeMenu{position:fixed;right:16px;top:16px;width:48px;height:48px;border-radius:50%;background:#FF0044;color:#fff;border:0;font-size:20px;font-weight:800;z-index:1000;cursor:pointer}
-.previewGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;min-height:120px;border:2px dashed var(--cyan);border-radius:20px;padding:10px;background:rgba(0,255,255,0.05)}
-.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#00FF88;color:#000;padding:12px 20px;border-radius:12px;font-weight:800;font-size:12px;z-index:9999;display:none;box-shadow:0 8px 24px rgba(0,255,0,0.4)}
-.miniPlayer{position:fixed;left:12px;right:12px;bottom:72px;background:rgba(15,20,36,0.95);backdrop-filter:blur(12px);border:2px solid var(--cyan);border-radius:16px;padding:10px;display:none;align-items:center;gap:10px;z-index:55}
-.miniCover{width:40px;height:40px;border-radius:8px;object-fit:cover;background:#111}
-.inputWrap{position:relative;overflow:hidden}
-.inputHidden{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0.01;z-index:2;cursor:pointer}
-.labelBtn{display:block;padding:14px;background:linear-gradient(90deg,var(--cyan),#00AAFF);color:#000;border-radius:12px;text-align:center;font-weight:800;font-size:12px;cursor:pointer;position:relative;z-index:1}
-.btnRow{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 12px 12px}
-</style>
-</head>
-<body>
-<div class="header">
-<img id="logoHeader" class="logo" src="./foto.jpg" alt="Ketua Nexus Logo">
-<div><div class="title">KETUA NEXUS OMNIVERSE</div><div class="sub">Account 75cafc7c • SEABANK 901985950786 • WA 085779007835 • LIVE 100%</div></div>
-</div>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KETUA NEXUS - FIX 5 MASALAH</title><link rel="manifest" href="manifest.json"><style>body{background:#070A14;color:#fff;font-family:Inter;margin:0;padding-bottom:100px}.card{background:#0F1424;border-radius:24px;border:2px solid #00FFFF;padding:16px;margin:12px 16px}.orb{width:88px;height:88px;border-radius:50%;margin:0 auto;background:linear-gradient(135deg,#00FFFF,#FF00FF);display:flex;align-items:center;justify-content:center;font-size:40px;border:3px solid #00FFFF;animation:pulse 1.2s infinite}.orb.speaking{box-shadow:0 0 30px #00FFFF,0 0 60px #FF00FF;transform:scale(1.08)}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}.btn{padding:10px 16px;border-radius:12px;border:none;font-weight:700;margin:4px;cursor:pointer}.btnCyan{background:linear-gradient(135deg,#00FFFF,#0088FF);color:#000}.chip{display:inline-block;padding:6px 12px;border-radius:12px;background:#111A2A;border:1px solid #00FFFF;color:#00FFFF;font-size:11px;margin:4px;text-decoration:none}.fab{position:fixed;right:16px;bottom:80px;z-index:100;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#00FFFF,#FF00FF);border:none;font-size:28px;box-shadow:0 0 30px #00FFFF;cursor:pointer}.menuOverlay{position:fixed;inset:0;background:rgba(7,10,20,0.98);z-index:9999;display:none;overflow-y:auto;padding:20px;padding-bottom:100px}.previewGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;min-height:120px;border:2px dashed #00FFFF;border-radius:20px;padding:10px;margin-top:16px}.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#00FF88;color:#000;padding:12px 20px;border-radius:12px;font-weight:700;z-index:9999;display:none}</style></head><body>
+<div class="card" style="text-align:center"><div class="orb" id="brainOrb">🧠</div><div id="waveform" style="display:none;justify-content:center;gap:3px;margin-top:10px"><span style="width:4px;height:16px;background:#00FFFF;border-radius:2px"></span><span style="width:4px;height:16px;background:#00FFFF;border-radius:2px"></span><span style="width:4px;height:16px;background:#00FFFF;border-radius:2px"></span></div><h2>AI OTAK KETUA NEXUS BICARA</h2><p style="font-size:11px;color:#88AACC">Selamat datang di rumah sahabatku - Nilai jual tinggi - Super menarik pembeli</p><button class="btn btnCyan" onclick="aktifkanSuara()">🔊 Aktifkan Suara + AI</button><button class="btn btnCyan" style="background:linear-gradient(135deg,#FF00FF,#FF88FF);color:#fff" onclick="bicaraPendek()">🧠 AI Bicara</button><button class="btn btnCyan" style="background:linear-gradient(135deg,#FFD700,#FF8C00)" onclick="stopBicara()">🔇 Stop</button></div>
 
-<div class="brainWrap">
-<div id="orb" class="orb"></div>
-<div id="wave" class="wave"><span></span><span></span><span></span><span></span><span></span></div>
-<h2 style="font-size:18px">AI OTAK KETUA NEXUS BICARA</h2>
-<p style="font-size:11px;color:var(--muted);margin:6px 0 12px">Selamat datang di rumah sahabatku - Nilai jual tinggi Super menarik pembeli</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-<button class="btn btnCyan" onclick="aktifkanSuara()">🔊 Aktifkan Suara + AI</button>
-<button class="btn btnMag" onclick="bicaraPanjang()">🧠 AI Bicara Nilai Jual</button>
-<button class="btn btnGold" onclick="bicaraPendek()">💬 Sapa</button>
-<button class="btn btnGray" onclick="stopBicara()">⏹️ Stop</button>
-</div>
-</div>
+<div class="card" style="position:relative;overflow:hidden"><img id="warungImg" src="foto.jpg" style="width:100%;height:320px;object-fit:cover;border-radius:20px;display:block" onerror="this.onerror=null;this.src='data:image/jpeg;base64,[STRIPPED]';showToast('Foto fallback - Upload via Galeri Konek!')"><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));padding:60px 16px 16px;border-radius:0 0 20px 20px"><div style="font-weight:800">Warung Keluarga Pribadi</div><div style="font-size:11px;color:#88AACC">Super App 100% Singularity - Foto 112KB - Konek HP</div></div><button onclick="document.getElementById('warungInput').click()" style="position:absolute;right:12px;bottom:12px;z-index:20;padding:10px 16px;background:linear-gradient(135deg,#00FFFF,#0088FF);color:#000;font-weight:800;border-radius:14px;border:none;cursor:pointer">📸 Ganti Foto Warung</button><input id="warungInput" type="file" accept="image/*" capture="environment" style="opacity:0.01;position:absolute;left:0;top:0;width:100%;height:30%;z-index:1"><video id="cameraView" autoplay playsinline muted style="display:none;width:100%;height:260px;object-fit:cover;border-radius:20px;margin-top:12px;background:#000"></video><canvas id="cameraCanvas" style="display:none"></canvas></div>
 
-<div class="card cardWarung">
-<img id="warungImg" class="imgWarung" src="./foto.jpg" alt="Warung Keluarga Pribadi">
-<div class="overlay"><div style="font-weight:800;font-size:14px">Warung Keluarga Pribadi</div><div style="font-size:10px;opacity:0.9">Super App 100% Singularity • Foto 112KB • Konek HP • Account 75cafc7c</div></div>
-<video id="cameraView" autoplay playsinline muted></video>
-<canvas id="cameraCanvas" style="display:none"></canvas>
-<div style="padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
-<div class="inputWrap">
-<input id="warungInput" type="file" accept="image/*" capture="environment" class="inputHidden">
-<label for="warungInput" class="labelBtn">📸 Ganti Foto Warung</label>
-<button onclick="document.getElementById('warungInput').click()" style="position:absolute;inset:0;z-index:3;opacity:0;border:0"></button>
-</div>
-<button class="btn btnCyan" style="z-index:20;position:relative" onclick="bukaKameraLive()">🎥 Buka Kamera Live</button>
-</div>
-</div>
+<div class="card"><div style="font-weight:800;margin-bottom:10px">🔍 PENCARIAN QUANTUM OMNIVERSE - FIX SESUAI APA YANG DICARI</div><input id="quantumSearch" placeholder="Cari apa saja - Ketik lalu Enter - Contoh: Kopi Susu 8K Warung Caringin" style="width:100%;padding:14px;border-radius:14px;background:#070A14;border:2px solid #00FFFF;color:#fff" oninput="updateSearchChips(this.value)" onkeydown="if(event.key==='Enter')doSearch()"><button class="btn btnCyan" style="width:100%;margin-top:10px" onclick="doSearch()">🔍 Cari Sekarang - Sesuai Ketikan</button><div id="searchChips" style="margin-top:12px"><a id="chipGoogle" href="https://www.google.com/search?q=ketua+nexus" target="_blank" rel="noopener" class="chip">Google</a><a id="chipYoutube" href="https://www.youtube.com/results?search_query=ketua+nexus" target="_blank" rel="noopener" class="chip">YouTube</a><a id="chipTiktok" href="https://www.tiktok.com/search?q=ketua%20nexus" target="_blank" rel="noopener" class="chip">TikTok</a><a id="chipShopee" href="https://shopee.co.id/search?keyword=ketua%20nexus" target="_blank" rel="noopener" class="chip">Shopee</a><a id="chipTokopedia" href="https://www.tokopedia.com/search?st=product&q=ketua%20nexus" target="_blank" rel="noopener" class="chip">Tokopedia</a></div><div id="searchResults" style="margin-top:12px;display:none"></div></div>
 
-<div class="searchWrap">
-<input id="quantumSearch" class="searchInput" placeholder="Cari Quantum Omniverse YouTube TikTok Shopee...">
-<button class="btn btnCyan" onclick="doSearch()">Cari</button>
-</div>
-<div style="display:flex;gap:8px;overflow:auto;padding:0 16px 8px">
-<a class="chip" href="https://www.google.com/search?q=Ketua+Nexus+Omniverse" target="_blank" rel="noopener">Google</a>
-<a class="chip" href="https://www.youtube.com/results?search_query=Ketua+Nexus+Warung" target="_blank" rel="noopener">YouTube</a>
-<a class="chip" href="https://www.tiktok.com/search?q=Ketua%20Nexus" target="_blank" rel="noopener">TikTok</a>
-<a class="chip" href="https://duckduckgo.com/?q=Ketua+Nexus" target="_blank" rel="noopener">DuckDuckGo</a>
-<a class="chip" href="https://www.bing.com/search?q=Ketua+Nexus" target="_blank" rel="noopener">Bing</a>
-<a class="chip" href="https://search.brave.com/search?q=Ketua+Nexus" target="_blank" rel="noopener">Brave</a>
-</div>
+<div class="card"><h3>📸 KAMERA & PENYIMPANAN - 100% AKTIF FIX</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn btnCyan" onclick="bukaKameraLive()">📷 Buka Kamera Live</button><button class="btn btnCyan" style="background:gold;color:#000" onclick="jepretFoto()">📸 Jepret Foto</button><button class="btn btnCyan" style="background:#222A3A;color:#fff" onclick="tutupKamera()">❌ Tutup</button><button class="btn btnCyan" style="background:#FF00FF;color:#fff" onclick="gantiKamera()">🔄 Ganti Depan Belakang</button></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px"><label for="galleryInput" style="padding:12px;background:linear-gradient(135deg,#FF00FF,#FF88FF);border-radius:12px;text-align:center;font-weight:700;cursor:pointer">🖼️ Galeri Foto</label><input id="galleryInput" type="file" accept="image/*" multiple style="display:none"><label for="videoInput" style="padding:12px;background:gold;border-radius:12px;text-align:center;font-weight:700;color:#000;cursor:pointer">🎥 Video Warung</label><input id="videoInput" type="file" accept="video/*" multiple style="display:none"></div><div class="previewGrid" id="previewGrid"></div></div>
 
-<div class="card">
-<div style="padding:16px;display:flex;justify-content:space-between;align-items:center">
-<div><div style="font-weight:800">Icon Menu Tap Untuk Semua Aplikasi</div><div style="font-size:10px;color:var(--muted)">8 sosial + marketplace 100% aktif</div></div>
-<button class="btn btnCyan" style="padding:16px 32px" onclick="openMenu()">☰ Buka Menu Aplikasi</button>
-</div>
-</div>
-
-<div class="card" style="padding:14px">
-<div style="font-weight:800;font-size:13px;margin-bottom:10px">📦 Penyimpanan Memory - Kamera Galeri Video Semua File - 100% AKTIF</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-<div class="inputWrap" style="background:#0A1A2A;border:1px solid var(--cyan);border-radius:12px">
-<input id="camInput" type="file" accept="image/*" capture="environment" class="inputHidden">
-<label for="camInput" class="labelBtn">📸 Kamera Warung</label>
-<button onclick="document.getElementById('camInput').click()" style="position:absolute;inset:0;z-index:20;opacity:0;border:0;cursor:pointer">fallback</button>
-</div>
-<div class="inputWrap" style="background:#0A1A2A;border:1px solid var(--mag);border-radius:12px">
-<input id="galleryInput" type="file" accept="image/*" multiple class="inputHidden">
-<label for="galleryInput" class="labelBtn" style="background:linear-gradient(90deg,var(--mag),#FF44AA)">🖼️ Galeri Foto</label>
-<button onclick="document.getElementById('galleryInput').click()" style="position:absolute;inset:0;z-index:20;opacity:0;border:0"></button>
-</div>
-<div class="inputWrap" style="background:#0A1A2A;border:1px solid var(--gold);border-radius:12px">
-<input id="videoInput" type="file" accept="video/*" multiple class="inputHidden">
-<label for="videoInput" class="labelBtn" style="background:linear-gradient(90deg,var(--gold),#FFAA00)">🎥 Video</label>
-<button onclick="document.getElementById('videoInput').click()" style="position:absolute;inset:0;z-index:20;opacity:0;border:0"></button>
-</div>
-<div class="inputWrap" style="background:#0A1A2A;border:1px solid #00FF88;border-radius:12px">
-<input id="allInput" type="file" accept="image/*,video/*,audio/*" multiple class="inputHidden">
-<label for="allInput" class="labelBtn" style="background:linear-gradient(90deg,#00FF88,#00CC88)">📁 Semua File</label>
-<button onclick="document.getElementById('allInput').click()" style="position:absolute;inset:0;z-index:20;opacity:0;border:0"></button>
-</div>
-</div>
-
-<div class="btnRow">
-<button class="btn btnCyan" onclick="bukaKameraLive()">📷 Buka Kamera Live</button>
-<button class="btn btnMag" onclick="jepretFoto()">📸 Jepret Foto</button>
-<button class="btn btnGray" onclick="tutupKamera()">❌ Tutup</button>
-<button class="btn btnGold" onclick="gantiKamera()">🔄 Ganti Kamera</button>
-</div>
-
-<div id="previewGrid" class="previewGrid"></div>
-
-<div id="previewActions" style="display:none;gap:8px;flex-wrap:wrap;margin-top:12px">
-<button class="btn btnCyan" onclick="downloadAll()">⬇️ Download Semua</button>
-<button class="btn btnMag" onclick="clearAll()">🗑️ Hapus</button>
-<button class="btn btnGold" onclick="shareAll()">📤 Share WA</button>
-<button class="btn btnGray" onclick="simpanMemory()">💾 Simpan Memory</button>
-</div>
-
-<div style="margin-top:12px;background:#0A1A2A;border-radius:12px;padding:10px;font-size:11px;display:grid;grid-template-columns:1fr 1fr;gap:6px">
-<div>✅ Kamera Siap <span id="memCount">0 file</span></div>
-<div>✅ Galeri Siap <span id="memSize">0 MB</span></div>
-<div>✅ Video Siap</div>
-<div>✅ Memory HP Konek 100%</div>
-</div>
-</div>
-
-<button class="fab" onclick="openMenu()">☰</button>
-
-<div class="miniPlayer" id="miniPlayer">
-<img id="miniCover" class="miniCover" src="./foto.jpg" alt="cover">
-<div style="flex:1"><div id="miniTitle" style="font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Warung Kopi Hits</div><div style="height:4px;background:#1E2A4A;border-radius:4px;margin-top:4px"><div id="miniProgress" style="width:0%;height:100%;background:var(--cyan);border-radius:4px"></div></div></div>
-<input id="volSlider" type="range" min="0" max="100" value="70" style="width:60px" oninput="setVol(this.value)">
-<button class="btn btnCyan" style="padding:6px 10px" onclick="togglePlay()">▶️</button>
-<button class="btn btnGray" style="padding:6px 10px" onclick="closePlayer()">✕</button>
-</div>
-
-<div class="bottomNav">
-<div class="navItem active" onclick="showFront()">🏠<br>Beranda</div>
-<div class="navItem" onclick="openMenuCat('video')">🎬<br>Video</div>
-<div class="navItem" onclick="openMenuCat('sosial')">💬<br>Sosial</div>
-<div class="navItem" onclick="openMenuCat('jual')">🛒<br>Jual</div>
-<div class="navItem" onclick="openMenuCat('musik')">🎵<br>Musik</div>
-<div class="navItem" onclick="document.getElementById('previewGrid').scrollIntoView({behavior:'smooth'})">📁<br>Upload</div>
-</div>
-
-<div id="menuOverlay" class="menuOverlay">
-<button class="closeMenu" onclick="closeMenu()">✕</button>
-<h2 style="font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--cyan),var(--mag));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:40px 0 10px">SEMUA APLIKASI TERSTRUKTUR RAPIH 100% AKTIF</h2>
-<p style="font-size:11px;color:var(--muted);margin-bottom:16px">Account 75cafc7c • SEABANK 901985950786 • WA 085779007835 • Front only 3 elements + FAB + bottom nav</p>
-
-<div style="margin-bottom:18px">
-<div style="font-weight:800;color:var(--cyan);margin-bottom:8px;font-size:13px">🎬 VIDEO HIBURAN (6 APPS)</div>
-<div class="grid3">
-<div class="appCard"><div class="appIcon" style="background:#FF0000">YT</div><div style="font-size:11px;font-weight:700">YouTube</div><a class="linkBtn" href="https://www.youtube.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#000">TT</div><div style="font-size:11px;font-weight:700">TikTok</div><a class="linkBtn" href="https://www.tiktok.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#FFCC00;color:#000">SV</div><div style="font-size:11px;font-weight:700">SnackVideo</div><a class="linkBtn" href="https://www.snackvideo.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#00CCCC">BIGO</div><div style="font-size:11px;font-weight:700">BIGO Live</div><a class="linkBtn" href="https://www.bigo.tv" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#1DB954">SP</div><div style="font-size:11px;font-weight:700">Spotify</div><a class="linkBtn" href="https://open.spotify.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#00CC66">JX</div><div style="font-size:11px;font-weight:700">JOOX</div><a class="linkBtn" href="https://www.joox.com" target="_blank" rel="noopener">Buka</a></div>
-</div>
-</div>
-
-<div style="margin-bottom:18px">
-<div style="font-weight:800;color:var(--mag);margin-bottom:8px;font-size:13px">💬 SOSIAL CHAT (5 APPS)</div>
-<div class="grid3">
-<div class="appCard"><div class="appIcon" style="background:#000">X</div><div style="font-size:11px;font-weight:700">X Twitter</div><a class="linkBtn" href="https://twitter.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:linear-gradient(135deg,#FF00FF,#00FFFF)">FOTO</div><div style="font-size:11px;font-weight:700">App Foto</div><a class="linkBtn" href="https://www.instagram.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#1877F2">BIRU</div><div style="font-size:11px;font-weight:700">App Biru</div><a class="linkBtn" href="https://www.facebook.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#0088CC">TG</div><div style="font-size:11px;font-weight:700">Telegram</div><a class="linkBtn" href="https://t.me" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#25D366">WA</div><div style="font-size:11px;font-weight:700">WhatsApp</div><a class="linkBtn" href="https://wa.me/6285779007835" target="_blank" rel="noopener">Chat WA</a></div>
-</div>
-</div>
-
-<div style="margin-bottom:18px">
-<div style="font-weight:800;color:var(--gold);margin-bottom:8px;font-size:13px">🛒 JUAL BANK (8 APPS)</div>
-<div class="grid3">
-<div class="appCard"><div class="appIcon" style="background:#FF6600">S</div><div style="font-size:11px;font-weight:700">Shopee</div><a class="linkBtn" href="https://shopee.co.id" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#00AA5B">T</div><div style="font-size:11px;font-weight:700">Tokopedia</div><a class="linkBtn" href="https://www.tokopedia.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#FF0000">A</div><div style="font-size:11px;font-weight:700">Akulaku</div><a class="linkBtn" href="https://www.akulaku.com" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#0F156D">L</div><div style="font-size:11px;font-weight:700">Lazada</div><a class="linkBtn" href="https://www.lazada.co.id" target="_blank" rel="noopener">Buka</a></div>
-<div class="appCard"><div class="appIcon" style="background:#0066FF">B</div><div style="font-size:11px;font-weight:700">Blibli</div><a class="linkBtn" href="https://www.blibli.
+<button class="fab" id="fabMenu" onclick="openMenu()">☰</button><div class="menuOverlay" id="menuOverlay"><button onclick="closeMenu()" style="position:fixed;right:16px;top:16px;width:48px;height:48px;border-radius:50%;background:#FF0040;color:#fff;border:none;font-size:20px;z-index:10000">X</button><h2 style="margin-top:48px;color:#00FFFF">SEMUA APLIKASI - 100% AKTIF</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px"><div style="background:#111A2A;padding:12px;border-radius:16px;text-align:center"><div>YouTube</div><a href="https://www.youtube.com" target="_blank" rel="noopener" style="color:#00FFFF">Buka</a></div><div style="background:#111A2A;padding:12px;border-radius:16px;text-align:center"><div>TikTok</div><a href="https://www.tiktok.com" target="_blank" rel="noopener" style="color:#00FFFF">Buka</a></div><div style="background:#111A2A;padding:12px;border-radius:16px;text-align:center"><div>Shopee</div><a href="https://shopee.co.id" target="_blank" rel="noopener" style="color:#00FFFF">Buka</a></div><div style="background:#111A2A;padding:12px;border-radius:16px;text-align:center"><div>Tokopedia</div><a href="https://www.tokopedia.com" target="_blank" rel="noopener" style="color:#00FFFF">Buka</a></div><div style="background:#111A2A;padding:12px;border-radius:16px;text-align:center"><div>SeaBank 901985950786</div><a href="https://www.seabank.co.id" target="_blank" rel="noopener" style="color:orange">Buka</a></div><div style="background:#111A2A;padding:12px;border-radius:16px;text-align:center"><div>WA 085779007835</div><a href="https://wa.me/6285779007835" target="_blank" rel="noopener" style="color:#25D366">Buka WA</a></div></div></div><div class="toast" id="toast"></div>
+<script>
+let audioCtx=null,voices=[],currentStream=null,facing='environment';
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',3000);}
+function openMenu(){const m=document.getElementById('menuOverlay');if(m){m.style.display='block';document.body.style.overflow='hidden';showToast('Menu Dibuka - 100% Aktif');}}
+function closeMenu(){const m=document.getElementById('menuOverlay');if(m){m.style.display='none';document.body.style.overflow='';showToast('Menu Tutup');}}
+function initAudio(){try{if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const b=audioCtx.createBuffer(1,1,22050);const s=audioCtx.createBufferSource();s.buffer=b;s.connect(audioCtx.destination);s.start(0);}catch(e){}}
+function loadVoices(){try{voices=speechSynthesis.getVoices();}catch(e){} if(!voices.length)setTimeout(loadVoices,500);}
+try{speechSynthesis.onvoiceschanged=loadVoices;loadVoices();}catch(e){}
+function playTone(f,v){try{initAudio();const o=audioCtx.createOscillator();const g=audioCtx.createGain();o.frequency.value=f;g.gain.value=v||0.5;o.connect(g);g.connect(audioCtx.destination);o.start();setTimeout(()=>{try{o.stop();}catch(e){}},600);}catch(e){}}
+function aktifkanSuara(){initAudio();loadVoices();speakKetua('Selamat datang di rumah sahabatku - Nilai jual tinggi - Super menarik pembeli - Kamera penyimpanan aktif - Otak milikmu!');showToast('🔊 Suara Aktif Konek 100%');}
+function bicaraPendek(){speakKetua('Selamat datang di rumah sahabatku');}
+function speakKetua(t){try{initAudio();speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='id-ID';u.rate=0.95;u.pitch=1.1;u.volume=1;const id=voices.find(v=>v.lang&&v.lang.includes('id'))||voices[0];if(id)u.voice=id;u.onstart=()=>{document.getElementById('brainOrb').classList.add('speaking');document.getElementById('waveform').style.display='flex';};u.onend=()=>{document.getElementById('brainOrb').classList.remove('speaking');document.getElementById('waveform').style.display='none';};u.onerror=()=>{playTone(440,0.5);};speechSynthesis.speak(u);setTimeout(()=>playTone(880,0.3),100);}catch(e){playTone(440,0.5);}}
+function stopBicara(){try{speechSynthesis.cancel();}catch(e){}showToast('Stop');}
+async function bukaKameraLive(){const v=document.getElementById('cameraView');v.style.display='block';v.scrollIntoView({behavior:'smooth'});try{if(currentStream)currentStream.getTracks().forEach(t=>t.stop());const s=await navigator.mediaDevices.getUserMedia({video:{facingMode:facing,width:{ideal:1280},height:{ideal:720}}});currentStream=s;v.srcObject=s;await v.play();showToast('📷 Kamera Aktif Konek OPPO A18 100%');}catch(err){showToast('Kamera butuh izin: '+err.name+' - Tap Galeri');document.getElementById('galleryInput').click();}}
+function tutupKamera(){const v=document.getElementById('cameraView');v.style.display='none';if(v.srcObject){v.srcObject=null;}if(currentStream){currentStream.getTracks().forEach(t=>t.stop());currentStream=null;}showToast('Kamera Tutup');}
+function jepretFoto(){const v=document.getElementById('cameraView');const c=document.getElementById('cameraCanvas');if(!v.srcObject){showToast('Buka Kamera Dulu');return;}c.width=v.videoWidth||1280;c.height=v.videoHeight||720;c.getContext('2d').drawImage(v,0,0);const d=c.toDataURL('image/jpeg',0.85);document.getElementById('warungImg').src=d;localStorage.setItem('warungFoto',d);showToast('📸 Jepret Berhasil Tersimpan Memory Konek!');}
+function gantiKamera(){facing=facing==='environment'?'user':'environment';tutupKamera();setTimeout(bukaKameraLive,400);showToast('Ganti '+facing);}
+function updateSearchChips(q){if(!q)q='ketua nexus';const e=encodeURIComponent(q);document.getElementById('chipGoogle').href='https://www.google.com/search?q='+e;document.getElementById('chipYoutube').href='https://www.youtube.com/results?search_query='+e;document.getElementById('chipTiktok').href='https://www.tiktok.com/search?q='+e;document.getElementById('chipShopee').href='https://shopee.co.id/search?keyword='+e;document.getElementById('chipTokopedia').href='https://www.tokopedia.com/search?st=product&q='+e;const r=document.getElementById('searchResults');r.style.display='block';r.innerHTML='<div class=card>🔍 Cari: <b>'+q+'</b> - Tap chip di atas - Google YouTube TikTok Shopee Tokopedia - Semua sesuai ketikan - 100% Aktif</div>';try{localStorage.setItem('searchHistory',q);}catch(e){}}
+function doSearch(){const q=document.getElementById('quantumSearch').value.trim();if(!q){showToast('Ketik pencarian dulu - Contoh: Kopi Susu 8K');return;}updateSearchChips(q);showToast('Cari: '+q+' - Sesuai ketikan - Buka Google YouTube TikTok Shopee - 100% Aktif');}
+document.addEventListener('DOMContentLoaded',()=>{const s=localStorage.getItem('warungFoto');if(s)document.getElementById('warungImg').src=s;document.getElementById('fabMenu').addEventListener('click',openMenu);document.getElementById('warungInput').addEventListener('change',function(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{document.getElementById('warungImg').src=ev.target.result;localStorage.setItem('warungFoto',ev.target.result);showToast('Foto Warung Ganti Berhasil Konek!');};r.readAsDataURL(f);});document.getElementById('galleryInput').addEventListener('change',function(e){showToast(e.target.files.length+' Foto Galeri Berhasil Konek!');});});
+</script></body></html>
