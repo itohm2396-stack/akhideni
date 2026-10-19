@@ -1,14 +1,10 @@
 name = "ketua-nexus-api"
 type = "javascript"
 account_id = "75cafc7c44fd6e8c99600441041d09e0"
-workers_dev = true
-compatibility_date = "2024-01-15"
+workers_dev = false
+route = "d.ketua-nexus-api.pages.dev/*"
 
 [build]
 command = ""
 [site]
 bucket = "./"
-entry-point = "./"
-
-[triggers]
-crons = []
